@@ -12,11 +12,6 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
-//inicio del servidor
-/*app.listen(3000, () => {
-  console.log("El servidor está escuchando en el puerto 3000 !!");
-});
-*/
 
 //respuesta del servidor en la raiz
 app.get("/", (req, res) => {
@@ -76,8 +71,8 @@ async function sendMail(userData, callback) {
 
     let mailOptions = {
         from: '"Servicio correo diego"<example.gmail.com>', 
-        to: 'serviciotecnologicoec@gmail.com',
-        bcc: 'diegod_v@hotmail.com',//copia oculta        
+        to: '<MAIL-DESTINO>',
+        bcc: '<MAIL-DESTINO-BCC>',//copia oculta        
         subject: userData.asunto, 
         //text: "Esto esta trabajando"
         html: contentHTML
